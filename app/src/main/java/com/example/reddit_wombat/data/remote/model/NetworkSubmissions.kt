@@ -1,7 +1,7 @@
 package com.example.reddit_wombat.data.remote.model
 
 data class NetworkSubmissions(
-    val data: Data,
+    val `data`: Data,
     val kind: String
 )
 
@@ -14,7 +14,7 @@ data class Data(
 )
 
 data class Children(
-    val data: DataX,
+    val `data`: DataX,
     val kind: String
 )
 
@@ -101,7 +101,7 @@ data class DataX(
     val secure_media: Any,
     val secure_media_embed: SecureMediaEmbed,
     val selftext: String,
-    val selftext_html: String,
+    val selftext_html: Any,
     val send_replies: Boolean,
     val spoiler: Boolean,
     val stickied: Boolean,
@@ -140,8 +140,8 @@ data class AllAwarding(
     val days_of_premium: Int,
     val description: String,
     val end_date: Any,
-    val giver_coin_reward: Int,
-    val icon_format: String,
+    val giver_coin_reward: Any,
+    val icon_format: Any,
     val icon_height: Int,
     val icon_url: String,
     val icon_width: Int,
@@ -149,8 +149,8 @@ data class AllAwarding(
     val is_enabled: Boolean,
     val is_new: Boolean,
     val name: String,
-    val penny_donate: Int,
-    val penny_price: Int,
+    val penny_donate: Any,
+    val penny_price: Any,
     val resized_icons: List<ResizedIcon>,
     val resized_static_icons: List<ResizedStaticIcon>,
     val start_date: Any,
@@ -162,11 +162,60 @@ data class AllAwarding(
     val tiers_by_required_awardings: Any
 )
 
+data class Gildings(
+    val gid_1: Int
+)
 
+data class MediaEmbed(
+    val content: String,
+    val height: Int,
+    val scrolling: Boolean,
+    val width: Int
+)
 
+data class Preview(
+    val enabled: Boolean,
+    val images: List<Image>
+)
 
+data class SecureMediaEmbed(
+    val content: String,
+    val height: Int,
+    val media_domain_url: String,
+    val scrolling: Boolean,
+    val width: Int
+)
 
+data class ResizedIcon(
+    val height: Int,
+    val url: String,
+    val width: Int
+)
 
+data class ResizedStaticIcon(
+    val height: Int,
+    val url: String,
+    val width: Int
+)
 
+data class Image(
+    val id: String,
+    val resolutions: List<Resolution>,
+    val source: Source,
+    val variants: Variants
+)
 
+data class Resolution(
+    val height: Int,
+    val url: String,
+    val width: Int
+)
 
+data class Source(
+    val height: Int,
+    val url: String,
+    val width: Int
+)
+
+class Variants(
+)
